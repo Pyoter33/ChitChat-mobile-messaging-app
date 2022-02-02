@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/conversationsPagerFragment">
+
+    <fragment
+        android:id="@+id/conversationsPagerFragment"
+        android:name="com.example.chitchat.fragments.ConversationsPagerFragment"
+        android:label="ConversationsPagerFragment" >
+        <action
+            android:id="@+id/action_conversationsPagerFragment_to_userSearchFragment"
+            app:destination="@id/userSearchFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_conversationsPagerFragment_to_conversationFragment"
+            app:destination="@id/conversationFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_conversationsPagerFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_conversationsPagerFragment_to_groupCreatorFragment"
+            app:destination="@id/groupCreatorFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_conversationsPagerFragment_to_groupFragment"
+            app:destination="@id/groupFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSearchFragment"
+        android:name="com.example.chitchat.fragments.UserSearchFragment"
+        android:label="UserSearchFragment" />
+    <fragment
+        android:id="@+id/conversationFragment"
+        android:name="com.example.chitchat.fragments.ConversationFragment"
+        android:label="ConversationFragment" >
+        <argument
+            android:name="conversationId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_conversationFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.chitchat.fragments.UserProfileFragment"
+        android:label="UserProfileFragment" />
+    <fragment
+        android:id="@+id/groupCreatorFragment"
+        android:name="com.example.chitchat.fragments.GroupCreatorFragment"
+        android:label="GroupCreatorFragment" />
+    <fragment
+        android:id="@+id/groupFragment"
+        android:name="com.example.chitchat.fragments.GroupFragment"
+        android:label="GroupFragment" >
+        <argument
+            android:name="groupId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_groupFragment_to_groupOptionsFragment"
+            app:destination="@id/groupOptionsFragment"
+            app:enterAnim="@anim/fade_in" />
+        <action
+            android:id="@+id/action_groupFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupOptionsFragment"
+        android:name="com.example.chitchat.fragments.GroupOptionsFragment"
+        android:label="GroupOptionsFragment" >
+        <argument
+            android:name="groupId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_groupOptionsFragment_to_userGroupSearchFragment"
+            app:destination="@id/userGroupSearchFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/userGroupSearchFragment"
+        android:name="com.example.chitchat.fragments.UserGroupSearchFragment"
+        android:label="UserGroupSearchFragment" >
+        <argument
+            android:name="groupId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.chitchat.fragments.CameraFragment"
+        android:label="CameraFragment" />
+</navigation>
